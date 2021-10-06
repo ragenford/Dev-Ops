@@ -24,20 +24,16 @@
 	# Quelle action est demandée ?
 	switch($action) {
 		case 'genesis':
-			require_once('controllers/GenesisController.php');
-			$controller = new GenesisController();
+		    $controller = ManagerControllers::getControllerGenesis();
 			break;
 		case 'books':
-			require_once('controllers/BooksController.php');
-			$controller = new BooksController();
+			$controller = ManagerControllers::getControllerBooks();
 			break;
 		case 'contact':
-			require_once('controllers/ContactController.php');	
-			$controller = new ContactController();
+			$controller = ManagerControllers::getControllerContact();
 			break;	
 		default: # Par défaut, le contrôleur de l'accueil est sélectionné
-			require_once('controllers/HomeController.php');
-			$controller = new HomeController();
+			$controller = ManagerControllers:: getControllerHome();
 			break;
 	}
 	# Exécution du contrôleur correspondant à l'action demandée
